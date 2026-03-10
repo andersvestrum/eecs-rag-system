@@ -83,3 +83,9 @@ python -m scripts.evaluate data/predictions.txt data/example_answers.txt
 - [ ] Works within 4 GB RAM, no GPU
 - [ ] Timeout handling per question (falls back to "unknown")
 - [ ] Ship `data/{chunks.jsonl, faiss.index, bm25_corpus.json, meta.json}` in zip
+
+## Repo vs local
+
+**In the GitHub repo:** code, `data/example_questions.txt`, `data/example_answers.txt`, `data/meta.json` (if present). The large generated files (`data/faiss.index`, `data/bm25_corpus.json`, `data/chunks.jsonl`) are not in the repo (they’re in `.gitignore`).
+
+**To run locally:** generate those data files by running the offline pipeline once (crawl, then build_index) as in **Offline Pipeline** above.
