@@ -1,63 +1,85 @@
-# EECS RAG System — CS 288 NLP
+# EECS RAG System — CS 288 Assignment 3
 
-A Retrieval-Augmented Generation (RAG) system for answering questions about the UC Berkeley EECS department.
+Retrieval-Augmented Generation system for answering factoid questions about UC Berkeley EECS.
 
-## Quick Start
+## Architecture
+
+```
+question
+  -> embed query (all-MiniLM-L6-v2)
+  -> hybrid retrieval (FAISS dense + BM25 sparse, fused with RRF)
+  -> top-k chunks injected into prompt
+  -> LLM generates short answer via OpenRouter
+  -> postprocess -> answer
+```
+
+## Setup
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+conda create -n rag python=3.10.12 -y && conda activate rag
+pip install torch>=2.0.0 transformers>=4.30.0 sentence-transformers>=2.2.2 \
+    faiss-cpu>=1.7.4 rank-bm25>=0.2.2 numpy>=1.24.0 tqdm>=4.64.0 \
+    matplotlib>=3.5.0 pandas>=1.5.0 seaborn>=0.11.0
 
-# Run the autograder entrypoint
-bash run.sh questions.txt predictions.txt
-```
-
-## Project Structure
-
-```
-├── run.sh                # autograder entrypoint (calls main.py)
-├── main.py               # reads questions, writes predictions
-├── llm.py                # PROVIDED by autograder (do not modify)
-│
-├── rag/
-│   ├── __init__.py
-│   ├── pipeline.py       # answer(question) -> string
-│   ├── retrieve.py       # FAISS dense retrieval
-│   └── prompt.py         # prompt template + postprocess
-│
-├── scripts/              # run locally (not used by autograder)
-│   ├── crawl.py          # download EECS pages
-│   └── build_index.py    # chunk -> embed -> FAISS index
-│
-└── data/                 # ship these with submission
-    ├── chunks.jsonl       # one chunk per line: {"url","text"}
-    ├── faiss.index        # FAISS retrieval index
-    └── meta.json          # config: embed model, chunk size, etc.
+# For local scripts only (not needed by autograder):
+pip install requests beautifulsoup4
 ```
 
 ## Offline Pipeline (run once locally)
 
 ```bash
-# 1. Crawl EECS pages → data/raw_html/
-python -m scripts.crawl
+# 1. Crawl EECS pages -> data/raw_html/ + data/url_map.json
+python -m scripts.crawl --max-pages 2000 --delay 0.5
 
-# 2. Chunk + embed + build index → data/{chunks.jsonl, faiss.index, meta.json}
-python -m scripts.build_index
+# 2. Chunk + embed + build indices -> data/{chunks.jsonl, faiss.index, bm25_corpus.json, meta.json}
+python -m scripts.build_index --chunk-size 800 --overlap 200
 ```
 
-## Autograder Pipeline
+## Run (autograder entrypoint)
 
 ```bash
-bash run.sh questions.txt predictions.txt
+export OPENROUTER_API_KEY="sk-..."  # for local testing
+bash run.sh data/example_questions.txt data/predictions.txt
 ```
 
-This reads each question, retrieves relevant chunks via FAISS, builds a
-prompt with context, calls `llm()`, and writes the answer.
+## Evaluate
 
-## Runtime Flow
-
-```
-question → embed query → FAISS search → top-k chunks → build prompt → llm() → answer
+```bash
+python -m scripts.evaluate data/predictions.txt data/example_answers.txt
 ```
 
-Models are loaded once (lazily on first call). Index and chunks are pre-built.
+## Project Structure
+
+```
+├── run.sh                  # autograder entrypoint (calls main.py)
+├── main.py                 # reads questions, writes predictions
+├── llm.py                  # OpenRouter wrapper (autograder replaces this)
+├── rag/
+│   ├── __init__.py
+│   ├── pipeline.py         # answer(question) -> string
+│   ├── retrieve.py         # hybrid BM25 + FAISS retrieval
+│   └── prompt.py           # prompt template + postprocessing
+├── scripts/                # local-only (not used by autograder)
+│   ├── crawl.py            # BFS crawler for eecs.berkeley.edu
+│   ├── build_index.py      # chunk -> embed -> build indices
+│   └── evaluate.py         # EM + F1 evaluation
+└── data/
+    ├── chunks.jsonl         # one chunk per line: {url, text, title}
+    ├── faiss.index          # FAISS inner-product index
+    ├── bm25_corpus.json     # tokenised corpus for BM25
+    ├── meta.json            # embed model, chunk config
+    ├── example_questions.txt
+    └── example_answers.txt
+```
+
+## Submission Checklist
+
+- [ ] `run.sh` accepts `$1` (questions) and `$2` (predictions)
+- [ ] Uses `python3`, not `python`
+- [ ] `llm.py` is unmodified (autograder overwrites it)
+- [ ] No direct OpenRouter calls outside `llm.py`
+- [ ] All paths are relative
+- [ ] Output has same line count as input, one answer per line
+- [ ] Works within 4 GB RAM, no GPU
+- [ ] Timeout handling per question (falls back to "unknown")
+- [ ] Ship `data/{chunks.jsonl, faiss.index, bm25_corpus.json, meta.json}` in zip
