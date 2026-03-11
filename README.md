@@ -48,6 +48,23 @@ bash run.sh data/example_questions.txt data/predictions.txt
 python -m scripts.evaluate data/predictions.txt data/example_answers.txt
 ```
 
+## Test run before submitting
+
+From the repo root, with dependencies installed (e.g. `pip install -r requirements.txt` or `conda activate rag`):
+
+```bash
+# 1. Set your OpenRouter API key (required for real answers)
+export OPENROUTER_API_KEY="sk-..."
+
+# 2. Run the pipeline (same as autograder)
+bash run.sh data/example_questions.txt data/predictions.txt
+
+# 3. Evaluate against reference answers
+python3 -m scripts.evaluate data/predictions.txt data/example_answers.txt
+```
+
+Without `OPENROUTER_API_KEY`, every answer will be `unknown` (the pipeline catches the error and falls back so it still finishes). Use the same Python that has `faiss`, `sentence_transformers`, etc. installed.
+
 ## Project Structure
 
 ```
@@ -72,17 +89,40 @@ python -m scripts.evaluate data/predictions.txt data/example_answers.txt
     └── example_answers.txt
 ```
 
+[Offline]
+  eecs.berkeley.edu → crawl.py → 1,492 HTML files
+  HTML files → build_index.py → 15,270 chunks + FAISS index + BM25 corpus
+
+[Runtime]
+  question → retrieve.py → 5 best chunks (hybrid BM25 + FAISS + RRF)
+  5 chunks + question → prompt.py → structured prompt
+  prompt → llm.py → raw LLM output
+  raw output → prompt.py/postprocess → clean short answer
+
+## Creating the submission zip
+
+1. Generate the retrieval datastore (if not already done):
+   ```bash
+   python -m scripts.crawl --max-pages 2000 --delay 0.5
+   python -m scripts.build_index --chunk-size 800 --overlap 200
+   ```
+2. Build the zip (run from repo root):
+   ```bash
+   bash scripts/build_submission.sh submission.zip
+   ```
+3. Submit `submission.zip` to Gradescope. The zip contains: `run.sh`, code (`main.py`, `llm.py`, `rag/`), `requirements.txt`, and `data/` (chunks.jsonl, faiss.index, bm25_corpus.json, meta.json, plus any QA files).
+
 ## Submission Checklist
 
-- [ ] `run.sh` accepts `$1` (questions) and `$2` (predictions)
-- [ ] Uses `python3`, not `python`
-- [ ] `llm.py` is unmodified (autograder overwrites it)
-- [ ] No direct OpenRouter calls outside `llm.py`
-- [ ] All paths are relative
-- [ ] Output has same line count as input, one answer per line
-- [ ] Works within 4 GB RAM, no GPU
-- [ ] Timeout handling per question (falls back to "unknown")
-- [ ] Ship `data/{chunks.jsonl, faiss.index, bm25_corpus.json, meta.json}` in zip
+- [x] `run.sh` accepts `$1` (questions) and `$2` (predictions)
+- [x] Uses `python3`, not `python`
+- [x] `llm.py` is unmodified (autograder overwrites it)
+- [x] No direct OpenRouter calls outside `llm.py`
+- [x] All paths are relative
+- [x] Output has same line count as input, one answer per line
+- [x] Works within 4 GB RAM, no GPU
+- [x] Timeout handling per question (falls back to "unknown")
+- [ ] Ship `data/{chunks.jsonl, faiss.index, bm25_corpus.json, meta.json}` in zip (via `build_submission.sh`)
 
 ## Repo vs local
 

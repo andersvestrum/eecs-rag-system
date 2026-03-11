@@ -1,4 +1,5 @@
 venv/
+.venv/
 __pycache__/
 *.pyc
 .env
@@ -15,3 +16,5 @@ build/
 data/faiss.index
 data/bm25_corpus.json
 data/chunks.jsonl
+submission.zip
+.submission_staging

@@ -1,3 +1,5 @@
+# Exact dependencies required by CS 288 Assignment 3 autograder (Python 3.10.12)
+# Do not add other libraries; the grading environment will not have them.
 torch>=2.0.0
 transformers>=4.30.0
 sentence-transformers>=2.2.2
@@ -5,3 +7,6 @@ faiss-cpu>=1.7.4
 rank-bm25>=0.2.2
 numpy>=1.24.0
 tqdm>=4.64.0
+matplotlib>=3.5.0
+pandas>=1.5.0
+seaborn>=0.11.0
