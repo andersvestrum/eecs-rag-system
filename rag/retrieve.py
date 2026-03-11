@@ -63,7 +63,7 @@ def _keyword_overlap(qtoks, text):
     return sum(1 for t in qtoks if t in words) / len(qtoks)
 
 
-def retrieve(query, top_k=5, n_retrieve=15):
+def retrieve(query, top_k=7, n_retrieve=20):
     _load()
     n_cand = min(n_retrieve * 10, len(_chunks))
 
