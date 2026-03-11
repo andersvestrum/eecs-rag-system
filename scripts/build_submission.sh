@@ -11,6 +11,7 @@ cd "$REPO_ROOT"
 
 OUT="${1:-submission.zip}"
 STAGING=".submission_staging"
+rm -f "$OUT"
 rm -rf "$STAGING"
 mkdir -p "$STAGING"
 
@@ -21,7 +22,12 @@ cp -r rag "$STAGING/"
 # Optional: include scripts (for reference; autograder does not run them)
 mkdir -p "$STAGING/scripts"
 [ -f scripts/__init__.py ] && cp scripts/__init__.py "$STAGING/scripts/"
-cp scripts/crawl.py scripts/build_index.py scripts/evaluate.py "$STAGING/scripts/" 2>/dev/null || true
+# IMPORTANT: Do NOT include scripts that import disallowed libraries (e.g. requests/bs4).
+# The policy checker scans the entire submission, even files that aren't executed.
+cp scripts/evaluate.py "$STAGING/scripts/" 2>/dev/null || true
+[ -f scripts/generate_validation_from_corpus.py ] && cp scripts/generate_validation_from_corpus.py "$STAGING/scripts/"
+[ -f scripts/check_validation_data.py ] && cp scripts/check_validation_data.py "$STAGING/scripts/"
+[ -f scripts/run_and_evaluate.sh ] && cp scripts/run_and_evaluate.sh "$STAGING/scripts/"
 
 # Data: retrieval datastore (required for RAG at test time)
 mkdir -p "$STAGING/data"
@@ -34,8 +40,14 @@ for f in chunks.jsonl faiss.index bm25_corpus.json meta.json; do
 done
 
 # QA data (required by assignment)
-for f in example_questions.txt example_answers.txt; do
-  [ -f "data/$f" ] && cp "data/$f" "$STAGING/data/"
+# - example_*: the provided 10 examples (useful for quick sanity checks)
+# - validation_*: your 100+ question validation set (required by the writeup)
+for f in example_questions.txt example_answers.txt validation_questions.txt validation_answers.txt; do
+  if [ -f "data/$f" ]; then
+    cp "data/$f" "$STAGING/data/"
+  else
+    echo "WARNING: data/$f not found." >&2
+  fi
 done
 
 # Ensure required data exists
@@ -44,6 +56,16 @@ for f in chunks.jsonl faiss.index bm25_corpus.json meta.json; do
     echo "ERROR: $STAGING/data/$f missing. Generate with:" >&2
     echo "  python -m scripts.crawl --max-pages 2000 --delay 0.5" >&2
     echo "  python -m scripts.build_index --chunk-size 800 --overlap 200" >&2
+    rm -rf "$STAGING"
+    exit 1
+  fi
+done
+
+# Ensure required QA data exists (validation set)
+for f in validation_questions.txt validation_answers.txt; do
+  if [ ! -f "$STAGING/data/$f" ]; then
+    echo "ERROR: $STAGING/data/$f missing. Generate validation data with:" >&2
+    echo "  python -m scripts.generate_validation_from_corpus --min-pairs 100" >&2
     rm -rf "$STAGING"
     exit 1
   fi
