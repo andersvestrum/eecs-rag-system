@@ -3,6 +3,6 @@
   "chunk_size": 800,
   "chunk_overlap": 200,
   "min_chunk_len": 40,
-  "num_chunks": 23492,
+  "num_chunks": 31161,
   "dim": 384
 }
