@@ -1,8 +1,4 @@
-"""Hybrid retrieval: BM25 (sparse) + FAISS (dense) with Reciprocal Rank Fusion.
-
-Retrieves a large candidate set, then re-ranks by keyword relevance to keep
-only the most useful chunks for the LLM prompt.
-"""
+"""Hybrid BM25 + FAISS retrieval with Reciprocal Rank Fusion."""
 
 import json
 import os
@@ -24,7 +20,7 @@ _chunks = None
 _model = None
 
 
-def _tokenize(text: str) -> list[str]:
+def _tokenize(text):
     return re.sub(r"[^\w\s]", " ", text.lower()).split()
 
 
@@ -49,74 +45,59 @@ def _load():
             corpus_tokens = json.load(f)
         _bm25 = BM25Okapi(corpus_tokens)
     else:
-        corpus_tokens = [_tokenize(c["text"]) for c in _chunks]
-        _bm25 = BM25Okapi(corpus_tokens)
+        _bm25 = BM25Okapi([_tokenize(c["text"]) for c in _chunks])
 
 
-def _rrf(rankings: list[list[int]], k: int = 60) -> list[int]:
-    """Reciprocal Rank Fusion over multiple ranked lists."""
-    scores: dict[int, float] = {}
+def _rrf(rankings, k=60):
+    scores = {}
     for ranking in rankings:
         for rank, doc_id in enumerate(ranking):
             scores[doc_id] = scores.get(doc_id, 0.0) + 1.0 / (k + rank + 1)
-    return sorted(scores, key=lambda d: scores[d], reverse=True)
+    return sorted(scores, key=scores.get, reverse=True)
 
 
-def _keyword_overlap(query_tokens: list[str], chunk_text: str) -> float:
-    """Score a chunk by how many query keywords appear in it."""
-    chunk_lower = chunk_text.lower()
-    chunk_words = set(_tokenize(chunk_lower))
-    if not query_tokens:
+def _keyword_overlap(qtoks, text):
+    words = set(_tokenize(text))
+    if not qtoks:
         return 0.0
-    hits = sum(1 for t in query_tokens if t in chunk_words)
-    return hits / len(query_tokens)
+    return sum(1 for t in qtoks if t in words) / len(qtoks)
 
 
-def retrieve(query: str, top_k: int = 5, n_retrieve: int = 15) -> list[dict]:
-    """Retrieve *n_retrieve* candidates, re-rank by keyword overlap,
-    and return the best *top_k* for the LLM prompt."""
+def retrieve(query, top_k=5, n_retrieve=15):
     _load()
-
     n_cand = min(n_retrieve * 10, len(_chunks))
 
-    # Dense retrieval
     vec = _model.encode([query], normalize_embeddings=True)
     vec = np.asarray(vec, dtype="float32")
     _, faiss_ids = _faiss_index.search(vec, n_cand)
     dense_ranking = [int(i) for i in faiss_ids[0] if 0 <= i < len(_chunks)]
 
-    # Sparse retrieval (BM25)
     tokens = _tokenize(query)
     bm25_scores = _bm25.get_scores(tokens)
     sparse_ranking = np.argsort(bm25_scores)[::-1][:n_cand].tolist()
 
-    # Fuse with RRF
     fused = _rrf([dense_ranking, sparse_ranking])
 
-    # First pass: collect candidates with URL dedup
-    candidates: list[dict] = []
-    url_counts: dict[str, int] = {}
+    # Collect candidates, limiting to 3 chunks per source URL
+    candidates = []
+    url_counts = {}
     for idx in fused:
         if idx >= len(_chunks):
             continue
         chunk = _chunks[idx]
         url = chunk.get("url", "")
-        cnt = url_counts.get(url, 0)
-        if cnt >= 3:
+        if url_counts.get(url, 0) >= 3:
             continue
-        url_counts[url] = cnt + 1
+        url_counts[url] = url_counts.get(url, 0) + 1
         candidates.append(chunk)
         if len(candidates) >= n_retrieve:
             break
 
-    # Second pass: re-rank candidates by keyword overlap with query
-    query_tokens = _tokenize(query)
-    scored = []
-    for i, c in enumerate(candidates):
-        kw_score = _keyword_overlap(query_tokens, c["text"])
-        rrf_score = 1.0 / (1 + i)  # position score from RRF
-        combined = 0.2 * kw_score + 0.8 * rrf_score
-        scored.append((combined, i, c))
-
+    # Re-rank by keyword overlap blended with RRF position
+    qtoks = _tokenize(query)
+    scored = [
+        (0.2 * _keyword_overlap(qtoks, c["text"]) + 0.8 / (1 + i), i, c)
+        for i, c in enumerate(candidates)
+    ]
     scored.sort(key=lambda x: x[0], reverse=True)
     return [c for _, _, c in scored[:top_k]]

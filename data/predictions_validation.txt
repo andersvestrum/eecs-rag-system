@@ -1,45 +1,45 @@
-unknown
+David Allstot
 Sanjit A. Seshia
 Beresford Parlett
 William J. Welch
 Michel Maharbiz
-David A. Patterson
-David Allstot
-Unknown
-Allon Wagner
-New York and Connecticut
-Sheila Humphreys
 Robert K. Brayton
+Richard Ruby
+unknown
+Igor Mordatch
+New York and Connecticut
+Alisha Menon
+Ana Arias
 Dawn Song
 Robert Chau
 Andrew R. Neureuther
-Aditi Krishnapriyan
-Jan Rabaey
+Bernhard Boser
+Bob Bordersen
 Anca Dragan
-Arthur Gill
-Zhanghao Wu
+Otto J.M. Smith
+Eric Brewer
 EE 240B
-Carlo H. SÃ©quin
+Carlo H. Séquin
 Quantum Materials
 Robert Pilawa-Podgurski
 unknown
-Constance Chang-Hasnain
+Nika Haghtalab
 Avideh Zakhor
 Jessica Boles
-unknown
+Unknown
 Jose M. Carmena
 robust to data-generation biases
 Armando Fox
 Rishabh Iyer
-Carlo H. SÃquin
+Carlo H. SÃ©quin
 Jan M. Rabaey
-Giuseppe Loianno
-Kannan Ramchandran
-Narges Norouzi
+Chelsea Finn
+Krste AsanoviÄ
+Preeya Khana
 EE 242B
-Jeronimo Segovia Fernandez
+unknown
 Koushik Sen
-V. Stojanovic
+Vladimir Stojanovic
 Michael Lustig
 Eugene Wong
 Zaijun Chen
@@ -48,212 +48,212 @@ Victoria Coleman
 Martin Wainwright
 Jan M. Rabaey
 Boubacar Kanté
-Nika Haghtalab
-Sewon Min
-Professors Messerschmitt and Edward Lee
-Niloufar Salehi
-unknown
+Natacha Crooks
+Alane Suhr
+Sayeef Salahuddin
+Ion Stoica
+Kurt Keutzer
 EE 240C
 Song Mei
 Edward A. Lee
 Vinod Vaikuntanathan
 Arthur R. Bergen
-unknown
-Wil Zeilinger
-unknown
-Donald O. Pederson
-Robert K. Brayton
-Shafi Goldwasser
+Avideh Zakhor
+Ion Stoica
+Ana Arias
+Susan L. Graham
+Ana Arias
+Avi Wigderson
 Laura Grigori
 Kenneth K. Mei
 Aditi Krishnapriyan
-Gordon Moore
-Matei Zaharia
-Tsu-Jae King Liu
-EECS 227
+Aditi Krishnapriyan
+Amin Vahdat
+A. Lichtenberg
+EECS 227AT is not mentioned in the provided context
 Abhay Parekh
-Robert K. Brayton
+Lotfi Zadeh
 CS 169L
-Adam Yala
 unknown
+John Wawrzynek
 Stephen E. Derenzo
-Tsu-Jae King Liu
+unknown
 Lijie Chen
 Marti Hearst
 Ana Arias
-Aydin Buluç
+Aydin BuluÃ§
 Henry Corrigan-Gibbs
-unknown
-Shafi Goldwasser
+Dan Garcia
+Daniel Klein
 unknown
 Babak Ayazifar
-Emma Pierson
+Stuart J. Russell
 Ronald Fearing
-EE 241A
+EE 241B
 unknown
 Richard M. White
-Quoc Le
+Rishabh Iyer
 EE 242A
-EL ENG 242B
-Donald O. Pederson
+2xyB
+unknown
 David Tse
-Dr. Morris
+Meredith Ringel Morris
 Brian A. Barsky
-EE 240B
-Christos Papadimitriou
-distributed and decentralized optimization
-Sharad Malik
+EL ENG 105
+Michael I. Jordan
+Claire Tomlin
+Ernest S. Kuh
 Richard J. Fateman
-Anca Dragan
+Rodney Brooks
 Krste Asanović
-formal methods
+M. Stonebraker
 Lotfi A. Zadeh
 Jennifer Chayes
-Ana Arias
+Robert Pilawa-Podgurski
 Elwyn R. Berlekamp
-Stuart J. Russell
+Stuart Russell
 Martin Vetterli
-Trevor Darrell
-Gireeja Ranade
-John DeNero
-Arthur Gill
-Leon Chua
+Dawn Song
+Unknown
+Tsu-Jae King Liu
+Serina Chang
+unknown
 Jerome R. Singer
 Charles K. (Ned) Birdsall
-Michael A. Harrison
-Bin Yu
+IEEE Fellow
+Sayeef Salahuddin
 David Attwood
-David A. Hodges
+Anantha Chandrakasan
 Luke Lee
-Ernest S. Kuh
-unknown
+Carlo H. Séquin
+Venkatesan Guruswami
 Robert Pilawa-Podgurski
 EE 141/241A
 Ana Claudia Arias
 Michael Ball
 Nilah Ioannidis
 Jean Walrand
-Joseph T. Gier
-Sarah E. Chasins
+V. Paxson
+Sarah Chasins
 Haoning Tang
 Scott Shenker
-Nika Haghtalab
+Natacha Crooks
 Borivoje Nikolic
 Pieter Abbeel
 Bernhard Boser
 Costas J. Spanos
 Yi Ma
-Umesh Vazirani
+Serina Chang
 Ruzena Bajcsy
 Robert Full
 Elijah Polak
-EE 141 or EE 241A
-unknown
+EE 141
+Robert k. Brayton
 EECS 251A
 Michael Lieberman
 Amir Kamil
-Lawrence A. Rowe
+Prof. Shank
 Ken Goldberg
 Angjoo Kanazawa
 Kristofer Pister
-ensuring both the performance of learning algorithms in presence of
+unknown
 Robert G. Meyer
 Michael Harrison
-Elad Alon
+Ali Niknejad
 David E. Culler
 Paul R. Gray
 Shafi Goldwasser
 Hany Farid
-Avishay Tal
-Bruno Olshausen
+Avi Wigderson
+James O'Brien
 John Chuang
 Mekhail Anwar
 Edwin R. Lewis
-At the intersection of Hearst and LeRoy Avenues
-Laura Grigori
-Sarah Chasins
+Across the street from Cory Hall
+Carlo H. SÃquin
+Susan L. Graham
 Venkatesan Guruswami
-John Wright
+unknown
 unknown
 David Patterson
-Jerrold Marsden
+David Tse
 Thomas F. Budinger
 Asir Intisar Khan
 Jonathan Bachrach
-unknown
-unknown
-Lisa Yan
-Gopala Krishna Anumanchipalli
+Natacha Crooks
+Ana Arias
+Dan Klein
+Gopala Anumanchipalli
 Nicholas Weaver
-health and public health
+unknown
 Michael J. Clancy
 EE 126
-Amy Pavel
+Tim van Erven
 EECS 251B
 Sewon Min
-Jitendra Malik
-unknown
+Trevor Darrell
+Ana Arias
 CS 36
-CS 36
+EECS 251A
 S. Shankar Sastry
 Jaijeet Roychowdhury
 EE 230B
 David A. Patterson
 unknown
 Jessica Boles
-Eric Brewer
+Umesh Vazirani
 Edward L. Keller
 Anthony Yen
-unknown
+Unknown
 Eric Paulos
-Wil Zeilinger
+Unknown
 David Wagner
 Babak Ayazifar
 Niloufar Salehi
-Amy Pavel
+Katherine A. Yelick
 Stavros Tripakis
 Sagar Karandikar
-Anant Sahai
+Electrical Engineering and Computer Science
 Preeya Khanna
-Sashank Krishnamurthy
-Daniel Klein
-EECS 127
-Arthur Gill
-EE 113/213A
-EE 213B
+Robert Chau
+unknown
+EECS 249M
+Randy H. Katz
+EE 113
+EE 113B
 George L. Turin
-Gordon Moore
+Ion Stoica
 Nathan W. Cheung
-Joseph M. Hellerstein
+Joseph Hellerstein
 Nir Yosef
 Kam Y. Lau
-Chunlei Liu
+Thomas F. Budinger
 Doug Tygar
-Felix F. Wu
-Donald O. Pederson
+Michael I. Jordan
+Edwin R. Lewis
 2/18/26
 Lotfi A. Zadeh
 William G. Oldham
 Edward A. Lee
 Otto J.M. Smith
-Alexandra von Meier
+Bernhard Boser
 Aditya Parameswaran
 Duncan Callaway
 Bruno Olshausen
 Sayeef Salahuddin
 Jan M. Rabaey
-unknown
+Michael Stonebraker
 Stella Yu
 Robert W. Brodersen
-Kannan Ramchandran
-Bin Yu
-John Simon Guggenheim Memorial Foundation Fellow
-Krste Asanović
+David Tse
+Anthony Joseph
+Allan J. Lichtenberg
+Krste AsanoviÄ
 Robert Wilensky
 David G. Messerschmitt
-Anthony D. Joseph
+Anthony Joseph
 Trevor Darrell
-NVIDIA Research
+Dr. Ayse Kivilcim Coskun
 Nika Haghtalab
 Pierluigi Nuzzo
 Rikky Muller
@@ -261,31 +261,31 @@ Ruzena Bajcsy
 Jonathan Shewchuk
 Clark Nguyen
 Osama Shanaa
-Jan Rabaey
-unknown
+Jitendra Malik
+Aditi Krishnapriyan
 Andreas Kuehlmann
-Deborah Estrin
+Unknown
 unknown
 Trevor Darrell
 John R. Whinnery
 Deborah Estrin
-Ana Claudia Arias
+Sayeef Salahuddin
 Ali Ghodsi
-Sewon Min
-unknown
+Alane Suhr
+Krste AsanoviÄ
 Michael Lustig
 Charles A. Desoer
 Gerald Friedland
-Alexei Efros
+Avideh Zakhor
 Kannan Ramchandran
-Sheila Humphreys
+IJCAI Research Excellence Award
 Henry Corrigan-Gibbs
 John D. Kubiatowicz
 Sergey Levine
 Haoning Tang
 Serina Chang
-EL ENG 240A
-Bin Yu
-Michael Jordan
+EE 240A
+Ana Arias
+Michael I. Jordan
 Bernd Sturmfels
-Dr. Morris
+Daniel Klein
