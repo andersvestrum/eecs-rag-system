@@ -79,6 +79,7 @@ Without `OPENROUTER_API_KEY`, every answer will be `unknown` (the pipeline catch
 ├── scripts/                # local-only (not used by autograder)
 │   ├── crawl.py            # BFS crawler for eecs.berkeley.edu
 │   ├── build_index.py      # chunk -> embed -> build indices
+│   ├── generate_validation_from_corpus.py  # 100+ Q&A from chunks (for assignment)
 │   └── evaluate.py         # EM + F1 evaluation
 └── data/
     ├── chunks.jsonl         # one chunk per line: {url, text, title}
@@ -98,6 +99,23 @@ Without `OPENROUTER_API_KEY`, every answer will be `unknown` (the pipeline catch
   5 chunks + question → prompt.py → structured prompt
   prompt → llm.py → raw LLM output
   raw output → prompt.py/postprocess → clean short answer
+
+## Validation set (100+ questions for the assignment)
+
+To create 100+ validation Q&A pairs whose **answers appear in your corpus** (so EM/F1 are meaningful), run after `build_index`:
+
+```bash
+python -m scripts.generate_validation_from_corpus --min-pairs 100
+```
+
+This overwrites `data/validation_questions.txt` and `data/validation_answers.txt` with pairs extracted from chunks (course numbers, faculty names, dates, buildings). Then run and evaluate:
+
+```bash
+bash run.sh data/validation_questions.txt data/predictions_validation.txt
+python3 -m scripts.evaluate data/predictions_validation.txt data/validation_answers.txt
+```
+
+(Optional) Remove duplicate questions with `python data/dedupe_validation.py` before running the pipeline.
 
 ## Creating the submission zip
 

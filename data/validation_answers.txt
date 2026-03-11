@@ -1,0 +1,291 @@
+Chittoor V. Ramamoorthy
+Sanjit A. Seshia
+Beresford N. Parlett
+William J. Welch
+Michel Maharbiz
+Lijie Chen
+Ahmad Bahai
+Prabal Dutta
+Allon Wagner
+Laurent El Ghaoui
+Jelani Nelson
+Jitendra Malik
+Dawn Song
+Richard Dorrance
+Andrew R. Neureuther
+Christian Borgs
+Pravin Varaiya
+Anca Dragan
+Thomas A. Henzinger
+Ion Stoica
+EE 240B
+Richard S. Muller
+Eric Y. Ma
+Seth R. Sanders
+Venkat Anantharam
+Vladimir Stojanovic
+Vivek Subramanian
+Women Faculty
+Katherine A. Yelick
+Jose M. Carmena
+Adam Yala
+Armando Fox
+Rishabh Iyer
+Carlo H. SÃ©quin
+Adam Wolisz
+Giuseppe Loianno
+Benjamin Recht
+Narges Norouzi
+EE 242B
+Jeronimo Segovia Fernandez
+Koushik Sen
+Krste AsanoviÄ
+Michael Lustig
+Eugene Wong
+Zaijun Chen
+T. Kenneth Gustafson
+Victoria Coleman
+Martin Wainwright
+Aditya Varma Muppala
+Boubacar KantÃ©
+Jason Lee
+David Bamman
+David A. Hodges
+Alvin Cheung
+Alexandre Bayen
+EE 240C
+Kameshwar Poolla
+Alberto L. Sangiovanni-Vincentelli
+Vinod Vaikuntanathan
+Arthur R. Bergen
+Avideh Zakhor
+Ali Niknejad
+Robert K. Brayton
+Donald O. Pederson
+John F. Canny
+Alessandro Chiesa
+Laura Grigori
+Kenneth K. Mei
+Igor Mordatch
+Eric Paulos
+Matei Zaharia
+Martin H. Graham
+EECS 127
+Abhay Parekh
+Jun-Chau Chien
+CS 169L
+Thomas Courtade
+John Wawrzynek
+Stephen E. Derenzo
+Kater Murch
+New Faculty
+Marti Hearst
+Elad Alon
+Aydin BuluÃ§
+Henry Corrigan-Gibbs
+Kannan Ramchandran
+Shafi Goldwasser
+Albert Pisano
+Teaching Faculty
+Emma Pierson
+Ronald S. Fearing
+EE 241B
+Mengjie Yu
+Richard M. White
+Joseph Gonzalez
+EE 142
+EE 242A
+Nelson Morgan
+Michael Gastpar
+BjÃ¶rn Hartmann
+Brian A. Barsky
+EECS 16A
+Christos Papadimitriou
+Claire Tomlin
+Chenming Hu
+Richard J. Fateman
+Manuel Blum
+Sophia Shao
+Max Willsey
+Alex Dimakis
+Somayeh Sojoudi
+Eli Yablonovitch
+Elwyn R. Berlekamp
+Jack Gallant
+Martin Vetterli
+Jiantao Jiao
+Visiting Faculty
+Lenore Blum
+Alp Sipahigil
+Leon O. Chua
+Jerome R. Singer
+Charles K. (Ned) Birdsall
+Constance Chang-Hasnain
+Alan J. Smith
+David Attwood
+Tahir Ghani
+Luke Lee
+Ming C. Wu
+John Wright
+Robert Pilawa-Podgurski
+EE 247A
+Ana Claudia Arias
+Michael Ball
+Nilah Ioannidis
+Jean Walrand
+Vern Paxson
+Sarah Chasins
+Yuan Cao
+Scott Shenker
+Nika Haghtalab
+Borivoje Nikolic
+Pieter Abbeel
+Bernhard Boser
+Costas J. Spanos
+Yi Ma
+Umesh Vazirani
+Ruzena Bajcsy
+Robert Full
+Elijah Polak
+EE 141
+Ivan P. Kaminow
+EECS 251A
+Michael A. Lieberman
+Amir Kamil
+Lawrence A. Rowe
+Ken Goldberg
+Angjoo Kanazawa
+Kristofer Pister
+Moritz Hardt
+Robert G. Meyer
+Michael A. Harrison
+EE Faculty List
+David E. Culler
+Paul R. Gray
+Alistair Sinclair
+Hany Farid
+Avishay Tal
+Current Faculty
+John Chuang
+Mekhail Anwar
+Edwin R. Lewis
+intersection of Hearst and LeRoy Avenue
+CS Faculty List
+Susan L. Graham
+Venkatesan Guruswami
+Jonathan Ragan-Kelley
+Murat Arcak
+David A. Patterson
+Jerrold Marsden
+Thomas F. Budinger
+Asir Intisar Khan
+Jonathan Bachrach
+Natacha Crooks
+Yun S. Song
+Lisa Yan
+Gopala Krishna Anumanchipalli
+Nicholas Weaver
+Irene Chen
+Michael J. Clancy
+EECS 126
+Peter Bartlett
+EECS 251B
+Sewon Min
+Kurt Keutzer
+Arthur Gill
+CS 36
+CS36
+S. Shankar Sastry
+Jaijeet Roychowdhury
+EE 230B
+John DeNero
+Laura Waller
+Jessica Boles
+Sylvia Ratnasamy
+Edward L. Keller
+Anthony Yen
+Satish Rao
+Jerome A. Feldman
+Dan Garcia
+David Wagner
+Babak Ayazifar
+Niloufar Salehi
+James Demmel
+Stavros Tripakis
+Sagar Karandikar
+Anant Sahai
+Preeya Khanna
+Sashank Krishnamurthy
+Daniel Klein
+EECS 227A
+Luca Trevisan
+EE 113
+EE 113B
+George L. Turin
+Jeffrey Bokor
+Nathan W. Cheung
+Joseph M. Hellerstein
+Nir Yosef
+Kam Y. Lau
+Chunlei Liu
+Doug Tygar
+Felix F. Wu
+Tsu-Jae King Liu
+2/9/26
+Lotfi A. Zadeh
+William G. Oldham
+Edward A. Lee
+Otto J.M. Smith
+Alexandra von Meier
+Aditya Parameswaran
+Duncan Callaway
+Bruno Olshausen
+Sayeef Salahuddin
+Jan M. Rabaey
+Michael Stonebraker
+Stella Yu
+Robert W. Brodersen
+David Tse
+Bin Yu
+Allan J. Lichtenberg
+Vikram Jain
+Robert Wilensky
+David G. Messerschmitt
+Anthony D. Joseph
+James O'Brien
+Shyam Parekh
+Sergey Levine
+Pierluigi Nuzzo
+Rikky Muller
+A. Richard Newton
+Jonathan Shewchuk
+Clark Nguyen
+Osama Shana'a
+Richard M. Karp
+Aditi Krishnapriyan
+Andreas Kuehlmann
+Randy H. Katz
+Christopher Hunn
+Trevor Darrell
+John R. Whinnery
+Eric Brewer
+Ali Javey
+Ali Ghodsi
+Alane Suhr
+Prasad Raghavendra
+Steven Conolly
+Charles A. Desoer
+Gerald Friedland
+Ren Ng
+Jean-Paul Tennant
+Stuart J. Russell
+Sanjam Garg
+John D. Kubiatowicz
+Song Mei
+Haoning Tang
+Serina Chang
+EE 140
+Ernest S. Kuh
+Michael Jordan
+Bernd Sturmfels
+Jennifer Chayes

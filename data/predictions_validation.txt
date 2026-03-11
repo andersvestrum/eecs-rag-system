@@ -1,0 +1,291 @@
+unknown
+Sanjit A. Seshia
+Beresford Parlett
+William J. Welch
+Michel Maharbiz
+David A. Patterson
+David Allstot
+Unknown
+Allon Wagner
+New York and Connecticut
+Sheila Humphreys
+Robert K. Brayton
+Dawn Song
+Robert Chau
+Andrew R. Neureuther
+Aditi Krishnapriyan
+Jan Rabaey
+Anca Dragan
+Arthur Gill
+Zhanghao Wu
+EE 240B
+Carlo H. SÃ©quin
+Quantum Materials
+Robert Pilawa-Podgurski
+unknown
+Constance Chang-Hasnain
+Avideh Zakhor
+Jessica Boles
+unknown
+Jose M. Carmena
+robust to data-generation biases
+Armando Fox
+Rishabh Iyer
+Carlo H. SÃquin
+Jan M. Rabaey
+Giuseppe Loianno
+Kannan Ramchandran
+Narges Norouzi
+EE 242B
+Jeronimo Segovia Fernandez
+Koushik Sen
+V. Stojanovic
+Michael Lustig
+Eugene Wong
+Zaijun Chen
+T. Kenneth Gustafson
+Victoria Coleman
+Martin Wainwright
+Jan M. Rabaey
+Boubacar Kanté
+Nika Haghtalab
+Sewon Min
+Professors Messerschmitt and Edward Lee
+Niloufar Salehi
+unknown
+EE 240C
+Song Mei
+Edward A. Lee
+Vinod Vaikuntanathan
+Arthur R. Bergen
+unknown
+Wil Zeilinger
+unknown
+Donald O. Pederson
+Robert K. Brayton
+Shafi Goldwasser
+Laura Grigori
+Kenneth K. Mei
+Aditi Krishnapriyan
+Gordon Moore
+Matei Zaharia
+Tsu-Jae King Liu
+EECS 227
+Abhay Parekh
+Robert K. Brayton
+CS 169L
+Adam Yala
+unknown
+Stephen E. Derenzo
+Tsu-Jae King Liu
+Lijie Chen
+Marti Hearst
+Ana Arias
+Aydin Buluç
+Henry Corrigan-Gibbs
+unknown
+Shafi Goldwasser
+unknown
+Babak Ayazifar
+Emma Pierson
+Ronald Fearing
+EE 241A
+unknown
+Richard M. White
+Quoc Le
+EE 242A
+EL ENG 242B
+Donald O. Pederson
+David Tse
+Dr. Morris
+Brian A. Barsky
+EE 240B
+Christos Papadimitriou
+distributed and decentralized optimization
+Sharad Malik
+Richard J. Fateman
+Anca Dragan
+Krste Asanović
+formal methods
+Lotfi A. Zadeh
+Jennifer Chayes
+Ana Arias
+Elwyn R. Berlekamp
+Stuart J. Russell
+Martin Vetterli
+Trevor Darrell
+Gireeja Ranade
+John DeNero
+Arthur Gill
+Leon Chua
+Jerome R. Singer
+Charles K. (Ned) Birdsall
+Michael A. Harrison
+Bin Yu
+David Attwood
+David A. Hodges
+Luke Lee
+Ernest S. Kuh
+unknown
+Robert Pilawa-Podgurski
+EE 141/241A
+Ana Claudia Arias
+Michael Ball
+Nilah Ioannidis
+Jean Walrand
+Joseph T. Gier
+Sarah E. Chasins
+Haoning Tang
+Scott Shenker
+Nika Haghtalab
+Borivoje Nikolic
+Pieter Abbeel
+Bernhard Boser
+Costas J. Spanos
+Yi Ma
+Umesh Vazirani
+Ruzena Bajcsy
+Robert Full
+Elijah Polak
+EE 141 or EE 241A
+unknown
+EECS 251A
+Michael Lieberman
+Amir Kamil
+Lawrence A. Rowe
+Ken Goldberg
+Angjoo Kanazawa
+Kristofer Pister
+ensuring both the performance of learning algorithms in presence of
+Robert G. Meyer
+Michael Harrison
+Elad Alon
+David E. Culler
+Paul R. Gray
+Shafi Goldwasser
+Hany Farid
+Avishay Tal
+Bruno Olshausen
+John Chuang
+Mekhail Anwar
+Edwin R. Lewis
+At the intersection of Hearst and LeRoy Avenues
+Laura Grigori
+Sarah Chasins
+Venkatesan Guruswami
+John Wright
+unknown
+David Patterson
+Jerrold Marsden
+Thomas F. Budinger
+Asir Intisar Khan
+Jonathan Bachrach
+unknown
+unknown
+Lisa Yan
+Gopala Krishna Anumanchipalli
+Nicholas Weaver
+health and public health
+Michael J. Clancy
+EE 126
+Amy Pavel
+EECS 251B
+Sewon Min
+Jitendra Malik
+unknown
+CS 36
+CS 36
+S. Shankar Sastry
+Jaijeet Roychowdhury
+EE 230B
+David A. Patterson
+unknown
+Jessica Boles
+Eric Brewer
+Edward L. Keller
+Anthony Yen
+unknown
+Eric Paulos
+Wil Zeilinger
+David Wagner
+Babak Ayazifar
+Niloufar Salehi
+Amy Pavel
+Stavros Tripakis
+Sagar Karandikar
+Anant Sahai
+Preeya Khanna
+Sashank Krishnamurthy
+Daniel Klein
+EECS 127
+Arthur Gill
+EE 113/213A
+EE 213B
+George L. Turin
+Gordon Moore
+Nathan W. Cheung
+Joseph M. Hellerstein
+Nir Yosef
+Kam Y. Lau
+Chunlei Liu
+Doug Tygar
+Felix F. Wu
+Donald O. Pederson
+2/18/26
+Lotfi A. Zadeh
+William G. Oldham
+Edward A. Lee
+Otto J.M. Smith
+Alexandra von Meier
+Aditya Parameswaran
+Duncan Callaway
+Bruno Olshausen
+Sayeef Salahuddin
+Jan M. Rabaey
+unknown
+Stella Yu
+Robert W. Brodersen
+Kannan Ramchandran
+Bin Yu
+John Simon Guggenheim Memorial Foundation Fellow
+Krste Asanović
+Robert Wilensky
+David G. Messerschmitt
+Anthony D. Joseph
+Trevor Darrell
+NVIDIA Research
+Nika Haghtalab
+Pierluigi Nuzzo
+Rikky Muller
+Ruzena Bajcsy
+Jonathan Shewchuk
+Clark Nguyen
+Osama Shanaa
+Jan Rabaey
+unknown
+Andreas Kuehlmann
+Deborah Estrin
+unknown
+Trevor Darrell
+John R. Whinnery
+Deborah Estrin
+Ana Claudia Arias
+Ali Ghodsi
+Sewon Min
+unknown
+Michael Lustig
+Charles A. Desoer
+Gerald Friedland
+Alexei Efros
+Kannan Ramchandran
+Sheila Humphreys
+Henry Corrigan-Gibbs
+John D. Kubiatowicz
+Sergey Levine
+Haoning Tang
+Serina Chang
+EL ENG 240A
+Bin Yu
+Michael Jordan
+Bernd Sturmfels
+Dr. Morris

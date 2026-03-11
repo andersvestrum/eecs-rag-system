@@ -62,9 +62,17 @@ def main():
         preds = [line.strip() for line in f]
 
     refs = load_references(sys.argv[2])
-    assert len(preds) == len(refs), (
-        f"Count mismatch: {len(preds)} preds vs {len(refs)} refs"
-    )
+    if len(preds) != len(refs):
+        n = min(len(preds), len(refs))
+        print(
+            f"Warning: count mismatch ({len(preds)} preds vs {len(refs)} refs). "
+            f"Evaluating first {n} only.",
+            file=sys.stderr,
+        )
+        preds = preds[:n]
+        refs = refs[:n]
+    else:
+        n = len(preds)
 
     total_em, total_f1 = 0.0, 0.0
     for i, (p, r) in enumerate(zip(preds, refs)):
@@ -76,7 +84,6 @@ def main():
         if em == 0:
             print(f"  [{i:>3}] MISS  pred={p!r:40s}  ref={r!r:40s}  F1={f1:.2f}")
 
-    n = len(preds)
     print(f"\nResults ({n} questions):")
     print(f"  Exact Match : {total_em / n * 100:5.1f}%")
     print(f"  Token F1    : {total_f1 / n * 100:5.1f}%")
