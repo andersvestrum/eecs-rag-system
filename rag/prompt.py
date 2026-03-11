@@ -56,14 +56,14 @@ def postprocess(raw):
     if len(ans) >= 2 and ans[0] == ans[-1] and ans[0] in ('"', "'"):
         ans = ans[1:-1].strip()
 
-    if ", " in ans and len(ans.split(", ")) >= 3:
-        ans = ans.split(", ")[0].strip()
-
     ans = re.sub(r"\s*\([^)]*\)\s*$", "", ans).strip()
 
+    # Trim verbose suffixes like "and by appointment", "and others"
+    ans = re.sub(r'\s+and\s+(by\s+)?(?:appointment|others|more).*$', '', ans, flags=re.IGNORECASE).strip()
+
     words = ans.split()
-    if len(words) > 12:
-        ans = " ".join(words[:10])
+    if len(words) > 15:
+        ans = " ".join(words[:12])
 
     if ans.lower() in _WORD_TO_NUM:
         ans = _WORD_TO_NUM[ans.lower()]
