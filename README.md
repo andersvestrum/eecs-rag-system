@@ -1,5 +1,7 @@
 # EECS RAG System — CS 288 Assignment 3
 
+[Assignment writeup (PDF)](./CS_288_A3_Writeup.pdf)
+
 Retrieval-Augmented Generation system for answering factoid questions about UC Berkeley EECS.
 
 ## Architecture
